@@ -1,19 +1,14 @@
 {
     "education":[
         {
-            "title": "Jun 20XX - Jun 20YY",
-            "cardTitle": "B.Tech, Computer Science",
-            "cardSubtitle":"XYZ University, City",
-            "cardDetailedText": "CGPA - 9.5",
-            "icon" : {
-                "src": "images/education/lorem-ipsum.png"
-            }
+            "title": "March 2023 - January 2024",
+            "cardTitle": "Front-End Developper Course",
+            "cardSubtitle":"Openclassrooms - France"
         },
         {
-            "title": "Apr 20XX",
+            "title": "September 2020 - July 2022",
             "cardTitle": "High School",
-            "cardSubtitle":"ABC School, City",
-            "cardDetailedText": "Marks - 95%"
+            "cardSubtitle":"Lyon - France"
         }
     ]
 }
