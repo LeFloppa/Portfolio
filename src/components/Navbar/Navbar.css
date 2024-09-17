@@ -1,3 +1,7 @@
+/* -------------------- */
+/* ---- NAVBAR STYLES -- */
+/* -------------------- */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -71,4 +75,59 @@
 .nav-link:hover,
 .nav-link.active {
   box-shadow: none;
+}
+
+/* --------------------------- */
+/* --- RESPONSIVE STYLES --- */
+/* --------------------------- */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: #E0DAE7;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-end;
+    padding-right: 1rem;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100%;
+    background-color: #1A1A2E;
+    padding-top: 3rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navbar ul.show {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar ul li {
+    margin: 1rem 0;
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+  }
 }

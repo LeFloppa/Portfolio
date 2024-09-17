@@ -4,6 +4,7 @@ import './Navbar.css';
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState('');
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,17 +35,62 @@ const Navbar = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <ul>
+      <div className="menu-toggle" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <ul className={menuOpen ? 'show' : ''}>
         <li>
-          <Link activeClass="active" to="home" spy={true} smooth={true} offset={0} duration={500} className="nav-link">Accueil </Link>
+          <Link
+            activeClass="active"
+            to="home"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            className="nav-link"
+            onClick={closeMenu}
+          >
+            Accueil
+          </Link>
         </li>
         <li>
-          <Link activeClass="active" to="projects" spy={true} smooth={true} offset={0} duration={500} className="nav-link">Projets </Link>
+          <Link
+            activeClass="active"
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            className="nav-link"
+            onClick={closeMenu}
+          >
+            Projets
+          </Link>
         </li>
         <li>
-          <Link activeClass="active" to="bio" spy={true} smooth={true} offset={0} duration={500} className="nav-link">A Propos </Link>
+          <Link
+            activeClass="active"
+            to="bio"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            className="nav-link"
+            onClick={closeMenu}
+          >
+            À Propos
+          </Link>
         </li>
       </ul>
     </nav>

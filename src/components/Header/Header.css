@@ -1,3 +1,7 @@
+/* -------------------- */
+/* --- HEADER STYLES --- */
+/* -------------------- */
+
 .hero-container {
   position: relative;
   width: 100%;
@@ -46,4 +50,32 @@ canvas {
 
 .social-icons a:hover {
   color: #6B50A9;
+}
+
+/* --------------------------- */
+/* --- RESPONSIVE STYLES --- */
+/* --------------------------- */
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .typewriter-text {
+    font-size: 1.8rem;
+  }
+
+  .social-icons {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .typewriter-text {
+    font-size: 1.5rem;
+  }
 }

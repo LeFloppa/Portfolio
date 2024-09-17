@@ -1,7 +1,5 @@
-// src/components/Projects/ContentWriterProjects.js
-
 import React from 'react';
-import '../components/Projects/Projects.css'; // Assurez-vous que les styles sont dans ce fichier
+import '../components/Projects/Projects.css';
 
 const projects = [
   {
@@ -11,7 +9,6 @@ const projects = [
     image: require('../assets/images/astro.png'),
     link: 'lien/vers/document1.pdf',
   },
-  // Ajoutez d'autres projets
 ];
 
 const ContentWriterProjects = () => {
