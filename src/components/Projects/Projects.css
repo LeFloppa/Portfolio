@@ -1,0 +1,364 @@
+#projects {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1A1A2E;
+  padding-top: 3rem;
+  padding-bottom: 50px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  color: #E0DAE7;
+  font-size: 5rem;
+  margin: 0 1rem;
+}
+
+.section-title .line {
+  flex: 1;
+  height: 2px;
+  background-color: #6B50A9;
+}
+
+.debris-container {
+  position: relative;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.debris {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  color: #E0DAE7;
+  background-color: #1A1A2E;
+  background-image: url('../../assets/images/cartographer.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Handjet', sans-serif;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.debris.empty {
+  cursor: not-allowed;
+  opacity: 0.5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.debris.empty span {
+  display: none;
+}
+
+.debris::before,
+.debris::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  background-color: transparent;
+  border: 2px solid #6B50A9;
+  transition: all 0.3s ease;
+}
+
+.debris::before {
+  top: -10px;
+  left: -10px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.debris::after {
+  bottom: -10px;
+  right: -10px;
+  border-top: none;
+  border-left: none;
+}
+
+.debris:hover::before,
+.debris:hover::after {
+  width: calc(100% + 18px);
+  height: calc(100% + 18px);
+}
+
+.debris:hover {
+  transform: scale(1.05);
+}
+
+.debris span {
+  position: relative;
+  z-index: 1;
+  color: #E0DAE7;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(26, 26, 46, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  background-color: #1A1A2E;
+  background-image: url('../../assets/images/cartographer.png');
+  background-repeat: repeat;
+  background-size: contain;
+  padding: 2rem;
+  border: 2px solid #6B50A9;
+  box-sizing: border-box;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #E0DAE7;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.modal-content h3 {
+  font-family: 'Handjet', sans-serif;
+  color: #E0DAE7;
+}
+
+.modal-content p {
+  color: #E0DAE7;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #E0DAE7;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #6B50A9;
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.projects-list .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.project-card {
+  background-color: #2E2E4E;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 300px;
+  color: #E0DAE7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card p,
+.project-card h3 {
+  margin-bottom: 10px;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.demo-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1A1A2E;
+  color: #E0DAE7;
+  text-decoration: none;
+  border: 2px solid #6B50A9;
+  font-family: 'Handjet', sans-serif;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.demo-button::before,
+.demo-button::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid #6B50A9;
+  transition: all 0.3s ease;
+}
+
+.demo-button::before {
+  top: -10px;
+  left: -10px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.demo-button::after {
+  bottom: -10px;
+  right: -10px;
+  border-top: none;
+  border-left: none;
+}
+
+.demo-button:hover::before,
+.demo-button:hover::after {
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+}
+
+.demo-button:hover {
+  background-color: #6B50A9;
+  color: #1A1A2E;
+}
+
+.github-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1A1A2E;
+  color: #E0DAE7;
+  text-decoration: none;
+  border: 2px solid #6B50A9;
+  font-family: 'Handjet', sans-serif;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.github-button::before,
+.github-button::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid #6B50A9;
+  transition: all 0.3s ease;
+}
+
+.github-button::before {
+  top: -10px;
+  left: -10px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.github-button::after {
+  bottom: -10px;
+  right: -10px;
+  border-top: none;
+  border-left: none;
+}
+
+.github-button:hover::before,
+.github-button:hover::after {
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+}
+
+.github-button:hover {
+  background-color: #6B50A9;
+  color: #1A1A2E;
+}
+
+.content-projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.content-project-card {
+  width: 250px;
+  background-color: #2E2E4E;
+  border-radius: 8px;
+  color: #E0DAE7;
+  text-decoration: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.content-project-info {
+  padding: 1rem;
+}
+
+.content-project-info h3 {
+  font-family: 'Handjet', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.content-project-info .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background-color: #6B50A9;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #E0DAE7;
+}

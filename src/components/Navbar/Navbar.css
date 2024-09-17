@@ -1,0 +1,74 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem;
+  color: #E0DAE7;
+  background-color: #1A1A2E;
+  background-image: url('../../assets/images/cartographer.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  text-decoration: none;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid #6B50A9;
+  transition: all 0.3s ease;
+}
+
+.nav-link::before {
+  top: -10px;
+  left: -10px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.nav-link::after {
+  bottom: -10px;
+  right: -10px;
+  border-top: none;
+  border-left: none;
+}
+
+.nav-link:hover::before,
+.nav-link.active::before,
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  box-shadow: none;
+}
