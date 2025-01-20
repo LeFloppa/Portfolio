@@ -1,12 +1,9 @@
-/* -------------------- */
-/* --- HEADER STYLES --- */
-/* -------------------- */
-
 .hero-container {
   position: relative;
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  z-index: 0;
 }
 
 canvas {
@@ -15,6 +12,7 @@ canvas {
   left: 0;
   width: 100% !important;
   height: 100% !important;
+  z-index: -1 !important;
 }
 
 .hero-content {
@@ -22,8 +20,9 @@ canvas {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #E0DAE7;
+  color: #e0dae7;
   text-align: center;
+  z-index: 1;
 }
 
 .hero-content h1 {
@@ -44,17 +43,13 @@ canvas {
 }
 
 .social-icons a {
-  color: #E0DAE7;
+  color: #e0dae7;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #6B50A9;
+  color: #6b50a9;
 }
-
-/* --------------------------- */
-/* --- RESPONSIVE STYLES --- */
-/* --------------------------- */
 
 @media (max-width: 768px) {
   .hero-content h1 {

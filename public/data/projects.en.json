@@ -1,0 +1,37 @@
+{
+  "frontEndProjects": [
+    {
+      "title": "Money Bank",
+      "description": "A secure, interactive online bank, my most significant project. The design is simple but followed expectations and the mock-up provided, aiming to test my abilities to know how to make back-end and front-end interact.<br /><br />To fully explore the features, deploy it locally from GitHub.",
+      "tags": ["React", "Node.js", "MongoDB", "Redux", "CSS"],
+      "image": "argentbank",
+      "githubLink": "https://github.com/LeFloppa/OpenClassroom-Projet11",
+      "liveLink": "https://open-classroom-projet11.vercel.app/home"
+    },
+    {
+      "title": "Kasa App",
+      "description": "A real estate rental app. This was my first project with React. I discovered the importance of components and the different options this framework offers for dynamism and optimization. In particular, the use of React Router, which offers a smoother user experience between pages and is adapted to redirections.<br /><br />This project strictly follows the mockup provided.",
+      "tags": ["React", "Node.js", "SCSS"],
+      "image": "kasa",
+      "githubLink": "https://github.com/LeFloppa/OpenClassroom-Projet8",
+      "liveLink": "https://open-classroom-projet8.vercel.app/home"
+    },
+    {
+      "title": "Portfolio Architect",
+      "description": "One of my first projects: a dynamic portfolio in JavaScript vanilla, based on an imposed layout. The emphasis was on project management via a secure administrator interface, enabling content to be added or removed without touching the code.<br /><br />To fully explore the features, deploy it locally from GitHub.",
+      "tags": ["JavaScript", "Node.js", "CSS"],
+      "image": "architect",
+      "githubLink": "https://github.com/LeFloppa/OpenClassroom-Projet6",
+      "liveLink": "https://lefloppa.github.io/OpenClassroom-Projet6/"
+    }
+  ],
+  "contentWriterProjects": [
+    {
+      "title": "Document 1",
+      "genre": "Article",
+      "purpose": "Blog",
+      "image": "astro",
+      "link": "lien/vers/document1.pdf"
+    }
+  ]
+}

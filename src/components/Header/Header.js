@@ -1,36 +1,35 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import * as THREE from 'three';
-import Typewriter from 'typewriter-effect';
-import './Header.css';
+import React, { useRef, useEffect } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import * as THREE from "three";
+import Typewriter from "typewriter-effect";
+import { useLanguage } from "../../utils/LanguageContext";
+import { translations } from "../../utils/Translations";
+import "./Header.css";
 
 function Stars() {
   const groupRef = useRef();
 
   useEffect(() => {
     const starGeometry = new THREE.BufferGeometry();
-    const starCount = 2500;
+    const starCount = 3000;
     const positions = [];
 
     for (let i = 0; i < starCount; i++) {
-      positions.push(
-        (Math.random() - 0.5) * 100,
-        (Math.random() - 0.5) * 100,
-        -Math.random() * 100
-      );
+      const [x, y, z] = getRandomPositionInSphere(300);
+      positions.push(x, y, z);
     }
 
     starGeometry.setAttribute(
-      'position',
+      "position",
       new THREE.Float32BufferAttribute(positions, 3)
     );
 
     const starMaterial = new THREE.PointsMaterial({
-      color: 0xE0DAE7,
-      size: 0.5,
+      color: 0xe0dae7,
+      size: 1,
       transparent: true,
       opacity: 0.8,
     });
@@ -39,8 +38,21 @@ function Stars() {
     groupRef.current.add(stars);
   }, []);
 
+  function getRandomPositionInSphere(radius) {
+    let x, y, z;
+    do {
+      x = Math.random() * 2 - 1;
+      y = Math.random() * 2 - 1;
+      z = Math.random() * 2 - 1;
+    } while (x * x + y * y + z * z > 1);
+    x *= radius;
+    y *= radius;
+    z *= radius;
+    return [x, y, z];
+  }
+
   useFrame(() => {
-    groupRef.current.rotation.y += 0.00005;
+    groupRef.current.rotation.y += 0.0001;
   });
 
   return <group ref={groupRef}></group>;
@@ -63,8 +75,13 @@ function Asteroids() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const asteroidGeometry = new THREE.DodecahedronGeometry(Math.random() * 0.5 + 0.2, 0);
-      const asteroidMaterial = new THREE.MeshStandardMaterial({ color: 0xE0DAE7 });
+      const asteroidGeometry = new THREE.DodecahedronGeometry(
+        Math.random() * 0.5 + 0.2,
+        0
+      );
+      const asteroidMaterial = new THREE.MeshStandardMaterial({
+        color: 0xe0dae7,
+      });
       const asteroid = new THREE.Mesh(asteroidGeometry, asteroidMaterial);
 
       const side = Math.random() > 0.5 ? 1 : -1;
@@ -84,17 +101,23 @@ function Asteroids() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <group ref={groupRef}></group>
-  );
+  return <group ref={groupRef}></group>;
 }
 
 const Hero = () => {
+  const { language } = useLanguage();
   return (
     <div className="hero-container">
       <Canvas
         camera={{ position: [0, 0, 15], fov: 60 }}
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+        }}
+      >
         <ambientLight intensity={1.2} />
         <directionalLight position={[10, 10, 10]} intensity={1.5} />
         <Stars />
@@ -105,19 +128,20 @@ const Hero = () => {
         <div className="typewriter-text">
           <Typewriter
             options={{
-              strings: ['Développeur Front-End.', 'Rédacteur.'],
+              strings: translations[language].header.roles,
               autoStart: true,
               loop: true,
-              cursor: '|',
+              cursor: "|",
               delay: 75,
             }}
           />
         </div>
         <div className="social-icons">
-          <a href="https://www.linkedin.com/in/adam-del-grosso/" target="_blank" rel="noopener noreferrer">
-            <FontAwesomeIcon icon={faLinkedin} size="3x" />
-          </a>
-          <a href="https://github.com/LeFloppa" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/LeFloppa"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FontAwesomeIcon icon={faGithub} size="3x" />
           </a>
           <a href="mailto:adamdelgrosso69@gmail.com">

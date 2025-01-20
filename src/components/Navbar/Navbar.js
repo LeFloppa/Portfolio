@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import './Navbar.css';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-scroll";
+import "./Navbar.css";
+import { useLanguage } from "../../utils/LanguageContext";
+import { translations } from "../../utils/Translations";
 
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState('');
+  const { language } = useLanguage();
+  const [activeSection, setActiveSection] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'projects', 'bio'];
+      const sections = ["home", "projects", "bio"];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       sections.forEach((sectionId) => {
@@ -27,11 +30,11 @@ const Navbar = () => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -49,7 +52,7 @@ const Navbar = () => {
         <div></div>
         <div></div>
       </div>
-      <ul className={menuOpen ? 'show' : ''}>
+      <ul className={menuOpen ? "show" : ""}>
         <li>
           <Link
             activeClass="active"
@@ -58,10 +61,12 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={500}
-            className="nav-link"
+            className={`nav-link ${
+              activeSection === "home" ? "highlight" : ""
+            }`}
             onClick={closeMenu}
           >
-            Accueil
+            {translations[language].nav.home}
           </Link>
         </li>
         <li>
@@ -72,10 +77,12 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={500}
-            className="nav-link"
+            className={`nav-link ${
+              activeSection === "projects" ? "highlight" : ""
+            }`}
             onClick={closeMenu}
           >
-            Projets
+            {translations[language].nav.projects}
           </Link>
         </li>
         <li>
@@ -86,10 +93,10 @@ const Navbar = () => {
             smooth={true}
             offset={0}
             duration={500}
-            className="nav-link"
+            className={`nav-link ${activeSection === "bio" ? "highlight" : ""}`}
             onClick={closeMenu}
           >
-            À Propos
+            {translations[language].nav.about}
           </Link>
         </li>
       </ul>
