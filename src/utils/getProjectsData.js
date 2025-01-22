@@ -1,7 +1,7 @@
 const imageMap = {
+  tekwave: require("../assets/images/TekWave-poster.png"),
   argentbank: require("../assets/images/argentbank-poster.png"),
   kasa: require("../assets/images/kasa-poster.png"),
-  architect: require("../assets/images/architect-poster.png"),
   astro: require("../assets/images/astro.png"),
 };
 

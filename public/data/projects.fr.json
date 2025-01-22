@@ -1,6 +1,14 @@
 {
   "frontEndProjects": [
     {
+      "title": "TekWave",
+      "description": "Un tableau de bord d'événements moderne et réactif mettant en avant des événements technologiques en cours. Comprend des cartes interactives, un compteur de spectateurs dynamique et un design épuré réalisé avec React. Prêt pour l'intégration MongoDB et la gestion administrative.",
+      "tags": ["React", "Node.js", "SCSS", "MongoDB", "Express.js"],
+      "image": "tekwave",
+      "githubLink": "https://github.com/LeFloppa/Event-Dashboard",
+      "liveLink": "https://event-dashboard-seven.vercel.app/"
+    },
+    {
       "title": "Argent Bank",
       "description": "Une banque en ligne sécurisée et interactive, mon projet le plus significatif. Le design est simple mais a su suivre les attentes et la maquette fournie, ayant pour but de tester mes capacités à savoir faire interagir back-end et front-end.<br /><br />Pour pleinement explorer les fonctionnalités, déployez-le localement depuis GitHub.",
       "tags": ["React", "Node.js", "MongoDB", "Redux", "CSS"],
@@ -15,14 +23,6 @@
       "image": "kasa",
       "githubLink": "https://github.com/LeFloppa/OpenClassroom-Projet8",
       "liveLink": "https://open-classroom-projet8.vercel.app/home"
-    },
-    {
-      "title": "Portfolio Architecte",
-      "description": "Un de mes premiers projets : un portfolio dynamique en JavaScript vanilla, basé sur une maquette imposée. L'accent était mis sur la gestion des projets via une interface administrateur sécurisée, permettant d'ajouter ou retirer du contenu sans toucher au code.<br /><br />Pour pleinement explorer les fonctionnalités, déployez-le localement depuis GitHub.",
-      "tags": ["JavaScript", "Node.js", "CSS"],
-      "image": "architect",
-      "githubLink": "https://github.com/LeFloppa/OpenClassroom-Projet6",
-      "liveLink": "https://lefloppa.github.io/OpenClassroom-Projet6/"
     }
   ],
   "contentWriterProjects": [
